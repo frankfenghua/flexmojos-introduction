@@ -11,23 +11,55 @@
 	<packaging>swf</packaging>
 
   <properties>
-    <flex.sdk.version>4.5.1.21328</flex.sdk.version>
-    <flex46.sdk.version>4.6.b.23201</flex46.sdk.version>
+    <!--<flex.sdk.version>4.5.1.21328</flex.sdk.version>-->
+    <!--<flex46.sdk.version>4.6.b.23201</flex46.sdk.version>-->
+
+      <flex.sdk.version>4.11.0.20131017</flex.sdk.version>
+      <flex.osmf.sdk.version>${flex.sdk.version}</flex.osmf.sdk.version>
+      <flex.textlayout.sdk.version>${flex.sdk.version}</flex.textlayout.sdk.version>
+      <flash.player.version>11.9</flash.player.version>
   </properties>
 
 	<build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
-			<plugin>
-				<groupId>org.sonatype.flexmojos</groupId>
-				<artifactId>flexmojos-maven-plugin</artifactId>
-				<version>4.0-RC2</version>
-        <extensions>true</extensions>
-        <configuration>
-          <sourceFile>./Main.mxml</sourceFile>
-          <debug>true</debug>  
-        </configuration>
-			</plugin>
+        <plugin>
+            <groupId>net.flexmojos.oss</groupId>
+            <artifactId>flexmojos-maven-plugin</artifactId>
+            <version>6.0.1</version>
+            <extensions>true</extensions>
+            <configuration>
+                <sourceFile>./Main.mxml</sourceFile>
+                <debug>true</debug>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>com.adobe.flex</groupId>
+                    <artifactId>compiler</artifactId>
+                    <version>${flex.sdk.version}</version>
+                    <type>pom</type>
+                </dependency>
+
+                <dependency>
+                    <groupId>com.adobe.flex</groupId>
+                    <artifactId>framework</artifactId>
+                    <version>${flex.sdk.version}</version>
+                    <type>pom</type>
+                </dependency>
+            </dependencies>
+
+        </plugin>
+
+			<!--<plugin>-->
+				<!--<groupId>org.sonatype.flexmojos</groupId>-->
+				<!--<artifactId>flexmojos-maven-plugin</artifactId>-->
+				<!--<version>4.0-RC2</version>-->
+        <!--<extensions>true</extensions>-->
+        <!--<configuration>-->
+          <!--<sourceFile>./Main.mxml</sourceFile>-->
+          <!--<debug>true</debug>-->
+        <!--</configuration>-->
+			<!--</plugin>-->
 		</plugins>
 	</build>
 	
@@ -39,7 +71,7 @@
 			<type>pom</type>
 		</dependency>
 	</dependencies>
-
+<!--
 	<repositories>
       <repository>
          <id>flex-mojos-repository</id>
@@ -64,5 +96,5 @@
          </snapshots>
       </pluginRepository>
    </pluginRepositories>
-
+-->
 </project>

@@ -6,7 +6,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.justinjmoses.flexmojos-introduction.nexus-example</groupId>
 	<artifactId>parent</artifactId>
-	<name>Flexmojos Libraries Example</name>
+	<name>Flexmojos Libraries Example Nexus</name>
 	<version>1.0.0-SNAPSHOT</version>
 
 
