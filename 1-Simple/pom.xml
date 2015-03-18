@@ -39,7 +39,7 @@
 			<type>pom</type>
 		</dependency>
 	</dependencies>
-	
+
 	<repositories>
       <repository>
          <id>flex-mojos-repository</id>

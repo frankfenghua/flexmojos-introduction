@@ -12,5 +12,5 @@ To use this:
 
 To run the build, execute:
 
-	mvn clean install -s settings.xml 
+	mvn clean install -Dflex.flashPlayer.command=FlashPlayerDebugger.exe -s settings.xml
 

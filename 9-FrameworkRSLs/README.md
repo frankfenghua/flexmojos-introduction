@@ -3,5 +3,5 @@ This project turns the Flex framework into an RSL dependency. As such, the resul
 
 To build, run:
 
-	mvn clean install
+	mvn clean -Dflex.flashPlayer.command=g:/FlashPlayerDebugger.exe install
 
