@@ -13,4 +13,5 @@ To use this:
 To run the build, execute:
 
 	mvn clean install -Dflex.flashPlayer.command=FlashPlayerDebugger.exe -s settings.xml
-
+To deploy to nexus snapshot repo, execute:
+    mvn clean -Dflex.flashPlayer.command=c:/FlashPlayerDebugger.exe install deploy -P internal-plugin-repository -s settings.xml

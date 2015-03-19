@@ -3,23 +3,30 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
-	
+    <servers>
+        <server>
+            <id>deployment</id>
+            <username>deployment</username>
+            <password>deployment123</password>
+        </server>
+    </servers>
+
 	<!-- Option 1: Using profiles -->
 	<profiles>
 		<profile>
 			<id>internal-nexus</id>
 		
-		    <repositories>
-          <repository>
-             <id>internal-repository</id>
-             <url>http://localhost:8081/nexus/content/groups/public</url>
-             <releases>
-            <enabled>true</enabled>
-            <updatePolicy>always</updatePolicy>
-            <checksumPolicy>warn</checksumPolicy>
-          </releases>
-          </repository>
-       </repositories>
+		 <repositories>
+              <repository>
+                 <id>internal-repository</id>
+                 <url>http://localhost:8081/nexus/content/groups/public</url>
+                 <releases>
+                    <enabled>true</enabled>
+                    <updatePolicy>always</updatePolicy>
+                    <checksumPolicy>warn</checksumPolicy>
+                 </releases>
+              </repository>
+       </repositories>mvc
 
        <pluginRepositories>
           <pluginRepository>
@@ -34,6 +41,43 @@
        </pluginRepositories>
 
 		</profile>
+        <profile>
+            <id>internal-nexus-shapshot</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <repositories>
+                <repository>
+                    <id>internal-repository-shapshot</id>
+                    <url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </snapshots>
+                    <layout>default</layout>
+                </repository>
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>internal-plugin-repository</id>
+                    <url>http://localhost:8081/nexus/content/groups/public</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>warn</checksumPolicy>
+                    </releases>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
 	</profiles>
 	
 
